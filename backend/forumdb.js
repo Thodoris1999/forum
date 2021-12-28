@@ -22,13 +22,14 @@ async function initdb() {
         const dbinitconn = await mysql.createConnection({
             host: process.env.DB_HOST,
             user: 'root',
-            password: '',
+            password: process.env.DB_ROOT_PASSWORD,
             port: process.env.DB_PORT,
             multipleStatements: true
         });
         await dbinitconn.connect();
         await dbinitconn.query(queries['create_forumdb']);
         await dbinitconn.end();
+        console.log("Database initialized successfully");
     } catch (err) {
         console.log("Failed to initialize DB: " + err);
     }
@@ -40,6 +41,10 @@ async function setupForumDB() {
     return new Promise((resolve, reject) => {
         // create main connection
         const mysql = require('mysql2');
+        console.log(process.env.DB_HOST);
+        console.log(process.env.DB_USER);
+        console.log(process.env.DB_PASSWORD);
+        console.log(process.env.DB_NAME);
         var dbconn = mysql.createConnection({
             host: process.env.DB_HOST,
             user: process.env.DB_USER,

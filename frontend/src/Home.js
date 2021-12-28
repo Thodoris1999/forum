@@ -4,7 +4,7 @@ import React from "react";
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        let apiUrl = process.env.API_URL || 'http://127.0.0.1:3680';
+        let apiUrl = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8080';
         console.log(apiUrl);
         this.state = {categories: []};
 

@@ -11,9 +11,9 @@ const dotenv = require('dotenv').config();
 const app = express();
 
 var corsoptions = {
-    origin:process.env.CLIENT_ORIGIN || "http://localhost:8081"
+    origin: process.env.CLIENT_ORIGIN || "http://127.0.0.1:3000"
 };
-app.use(cors(corsoptions));
+app.use(cors());
 
 app.options('*', cors());
 app.use(bodyParser.urlencoded({
