@@ -1,1 +1,1 @@
-SELECT * FROM Categories WHERE parent_category_id=1
+SELECT * FROM Categories WHERE parent_category_id=?;

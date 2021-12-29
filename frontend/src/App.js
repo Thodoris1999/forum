@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
+import Category from './Category';
 
-import { render } from "react-dom";
 import {
   BrowserRouter,
   Routes,
@@ -14,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/category/:categoryid" element={<Category/>} />
       </Routes>
     </BrowserRouter>
   );

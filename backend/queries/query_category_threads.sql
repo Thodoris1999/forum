@@ -1,1 +1,1 @@
-SELECT * FROM Threads WHERE category_id=2
+SELECT * FROM Threads WHERE category_id=?;
