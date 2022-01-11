@@ -30,6 +30,30 @@ function setupRoutes(app, dbconn) {
             res.json(result);
         });
     });
+
+    app.get("/thread/:threadid", async (req, res) => {
+        const q = queries['query_thread'];
+        const thread = req.params.threadid;
+        dbconn.query(q, [thread], (err, results) => {
+            if (err) {
+                return console.log(err.message);
+            }
+            console.log(results);
+            res.json(results);
+        });
+    });
+
+    app.post("/register", async (req, res) => {
+        const q = queries['query_thread'];
+        const thread = req.params.threadid;
+        dbconn.query(q, [thread], (err, results) => {
+            if (err) {
+                return console.log(err.message);
+            }
+            console.log(results);
+            res.json(results);
+        });
+    });
     console.log('Routes set up');
 }
 

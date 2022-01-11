@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home';
 import Category from './Category';
+import Thread from './Thread';
+import Register from './Register';
 
 import {
   BrowserRouter,
@@ -14,7 +16,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/register" element={<Register/>} />
         <Route path="/category/:categoryid" element={<Category/>} />
+        <Route path="/thread/:threadid" element={<Thread/>} />
       </Routes>
     </BrowserRouter>
   );
