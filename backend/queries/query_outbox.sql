@@ -3,5 +3,5 @@ FROM PMs
 INNER JOIN Users
 INNER JOIN Roles
 ON Users.email=PMs.recepient_email AND Users.role_name=Roles.role_name
-WHERE author_email='nvel18@gmail.com'
+WHERE author_email=?
 ORDER BY date;

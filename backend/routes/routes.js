@@ -48,6 +48,36 @@ function setupRoutes(app, dbconn) {
         });
     });
 
+    app.get("/inbox/:useremail", async (req, res) => {
+        // normally you get the user info from session and cookie (not from URL obv), but no time to learn how that works
+        const q = queries['query_inbox'];
+        const user_email = req.params.useremail;
+        dbconn.query(q, [user_email], (err, results) => {
+            if (err) {
+                console.log(err)
+                res.json(err);
+            } else {
+                console.log(results);
+                res.json(results);
+            }
+        });
+    });
+
+    app.get("/outbox/:useremail", async (req, res) => {
+        // normally you get the user info from session and cookie (not from URL obv), but no time to learn how that works
+        const q = queries['query_outbox'];
+        const user_email = req.params.useremail;
+        dbconn.query(q, [user_email], (err, results) => {
+            if (err) {
+                console.log(err)
+                res.json(err);
+            } else {
+                console.log(results);
+                res.json(results);
+            }
+        });
+    });
+
     app.post("/register", async (req, res) => {
         // normally you encrypt on the frontend, but oh well, just a prototype for presentation
         const q = queries['try_register'];
