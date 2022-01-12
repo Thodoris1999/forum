@@ -13,7 +13,7 @@ services:
       - db:/var/lib/mysql
     networks:
       - backend
-  backend:
+  forum-api:
     depends_on:
       - mysqldb
     build: ./backend
@@ -32,9 +32,9 @@ services:
     networks:
       - backend
       - frontend
-  frontend:
+  forum-ui:
     depends_on:
-      - backend
+      - forum-api
     build: ./frontend
     env_file: ./.env
     environment:
@@ -43,6 +43,7 @@ services:
       - $REACT_LOCAL_PORT:$REACT_DOCKER_PORT
     networks:
       - frontend
+
 volumes:
   db:
 

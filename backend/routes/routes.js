@@ -1,4 +1,6 @@
 const fs = require('fs');
+const bcrypt = require('bcrypt');
+const saltRounds = 12;
 const forumdb = require('../forumdb.js')
 
 function setupRoutes(app, dbconn) {
@@ -8,6 +10,7 @@ function setupRoutes(app, dbconn) {
         const q = queries['query_top_level_categories'];
         dbconn.query(q, (err, results) => {
             if (err) {
+                console.log(err)
                 return console.log(err.message);
             }
             console.log(results);
@@ -21,6 +24,7 @@ function setupRoutes(app, dbconn) {
         const category = req.params.categoryid;
         dbconn.query(q1+q2, [category, category], (err, results) => {
             if (err) {
+                console.log(err)
                 return console.log(err.message);
             }
             var result = {};
@@ -36,6 +40,7 @@ function setupRoutes(app, dbconn) {
         const thread = req.params.threadid;
         dbconn.query(q, [thread], (err, results) => {
             if (err) {
+                console.log(err)
                 return console.log(err.message);
             }
             console.log(results);
@@ -44,15 +49,57 @@ function setupRoutes(app, dbconn) {
     });
 
     app.post("/register", async (req, res) => {
-        const q = queries['query_thread'];
-        const thread = req.params.threadid;
-        dbconn.query(q, [thread], (err, results) => {
-            if (err) {
-                return console.log(err.message);
-            }
-            console.log(results);
-            res.json(results);
-        });
+        // normally you encrypt on the frontend, but oh well, just a prototype for presentation
+        const q = queries['try_register'];
+        console.log(req.body)
+        try {
+            console.log(req.body.psw);
+            const hashedPassword = await bcrypt.hash(req.body.psw, saltRounds)
+            console.log(hashedPassword);
+            dbconn.query(q, [req.body.email, req.body.username, hashedPassword], (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    console.log(results);
+                    res.json(results);
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
+    });
+
+    app.post("/login", async (req, res) => {
+        // normally you encrypt on the frontend, but oh well, just a prototype for presentation
+        const q = queries['try_authenticate'];
+        console.log(req.body)
+        try {
+            console.log(req.body.psw);
+            const hashedPassword = await bcrypt.hash(req.body.psw, saltRounds)
+            console.log(hashedPassword);
+            dbconn.query(q, [req.body.email], async (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    if (results.length > 0) {
+                        if (await bcrypt.compare(req.body.psw, results[0].password)) {
+                            console.log(results);
+                            res.json(results);
+                        } else {
+                            console.log("Invalid password");
+                            res.json([])
+                        }
+                    } else {
+                        console.log("Invalid email")
+                        res.json(results)
+                    }
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
     });
     console.log('Routes set up');
 }

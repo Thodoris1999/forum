@@ -8,6 +8,6 @@ RUN npm install
 
 COPY ./ ./
 
-EXPOSE 3000
+EXPOSE $REACT_DOCKER_PORT
 
 CMD [ "npm", "run", "start" ]
