@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CategoryContainer from "./CategoryContainer";
 
 function Category() {
     let params = useParams();
@@ -28,10 +29,10 @@ function Category() {
         .catch(e => console.log(e));
     }, [params.categoryid]);
 
+
     return <div>
             <h1>Hello world</h1>
-            <p>subcategories: {subcategories.map(obj => JSON.stringify(obj)).join(",")}</p>
-            <p>subthreads: {subthreads.map(obj => JSON.stringify(obj)).join(",")}</p>
+            <CategoryContainer subcategories={subcategories} subthreads={subthreads}/>
             </div>;
 }
 

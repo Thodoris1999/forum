@@ -2,6 +2,7 @@
 import React from "react";
 import Shoutbox from "./ShoutBox";
 import NavigationBar from './NavigationBar'
+import CategoryContainer from './CategoryContainer'
 
 class Home extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class Home extends React.Component {
     render() {
         return <div>
                 <h1>Hello world</h1>
-                <p>categories: {this.state.categories.map(obj => JSON.stringify(obj)).join(",")}</p>
+                <CategoryContainer subcategories={this.state.categories} subthreads={[]}/>
                 <Shoutbox/>
                 <NavigationBar/>
                </div>;
