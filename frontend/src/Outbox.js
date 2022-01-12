@@ -29,7 +29,7 @@ function Outbox(props) {
             //console.log(pms);
         })
         .catch(e => console.log(e));
-    }, []);
+    }, [props]);
 
     return <div>
             <h1>Outbox</h1>

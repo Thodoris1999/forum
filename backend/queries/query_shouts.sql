@@ -1,4 +1,4 @@
-SELECT Shouts.date, Shouts.content, Users.username, Users.role_name, Roles.role_color
+SELECT Shouts.shout_id, Shouts.date, Shouts.content, Users.username, Users.role_name, Roles.role_color
 FROM Shouts
 INNER JOIN Users
 INNER JOIN Roles

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import PostContainer from './PostContainer'
 
@@ -29,7 +29,7 @@ function Inbox(props) {
             //console.log(pms);
         })
         .catch(e => console.log(e));
-    }, []);
+    }, [props]);
 
     return <div>
             <h1>Inbox</h1>

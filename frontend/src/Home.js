@@ -1,5 +1,6 @@
 
 import React from "react";
+import Shoutbox from "./ShoutBox";
 
 class Home extends React.Component {
     constructor(props) {
@@ -29,6 +30,7 @@ class Home extends React.Component {
         return <div>
                 <h1>Hello world</h1>
                 <p>categories: {this.state.categories.map(obj => JSON.stringify(obj)).join(",")}</p>
+                <Shoutbox/>
                </div>;
     }
 }
