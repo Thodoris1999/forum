@@ -1,6 +1,7 @@
 
 import React from "react";
 import Shoutbox from "./ShoutBox";
+import NavigationBar from './NavigationBar'
 
 class Home extends React.Component {
     constructor(props) {
@@ -31,6 +32,7 @@ class Home extends React.Component {
                 <h1>Hello world</h1>
                 <p>categories: {this.state.categories.map(obj => JSON.stringify(obj)).join(",")}</p>
                 <Shoutbox/>
+                <NavigationBar/>
                </div>;
     }
 }
