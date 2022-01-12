@@ -38,7 +38,7 @@ function App() {
         <Route path="/inbox" element={<Inbox loggedin={loggedin} user_email={email}/>} />
         <Route path="/outbox" element={<Outbox loggedin={loggedin} user_email={email}/>} />
         <Route path="/category/:categoryid" element={<Category/>} />
-        <Route path="/thread/:threadid" element={<Thread/>} />
+        <Route path="/thread/:threadid" element={<Thread loggedin={loggedin} user_email={email}/>} />
       </Routes>
   );
 }

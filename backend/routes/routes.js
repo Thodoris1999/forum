@@ -182,24 +182,6 @@ function setupRoutes(app, dbconn) {
     });
 
     app.post("/pm", async (req, res) => {
-        const q = queries['insert_shout'];
-        console.log(req.body)
-        try {
-            dbconn.query(q, [req.body.content, req.body.email], (err, results) => {
-                if (err) {
-                    console.log(err)
-                    res.json(err)
-                } else {
-                    console.log(results);
-                    res.json(results);
-                }
-            });
-        } catch(err) {
-            console.error(err);
-        }
-    });
-
-    app.post("/pm", async (req, res) => {
         const q = queries['send_pm'];
         console.log(req.body)
         try {

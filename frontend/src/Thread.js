@@ -3,8 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import PostContainer from './PostContainer'
+import PostReply from './PostReply'
 
-function Thread() {
+function Thread(props) {
     let params = useParams();
     const [posts, setPosts] = useState([]);
 
@@ -27,10 +28,31 @@ function Thread() {
         .catch(e => console.log(e));
     }, [params.threadid]);
 
-    return <div>
-            <h1>Thread page</h1>
-            <PostContainer posts={posts}/>
-           </div>;
+    const handlePostReply = async (post) => {
+        post.thread_id = params.threadid;
+        post.email = props.user_email;
+        console.log(post);
+
+        let apiUrl = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8080';
+        return fetch(apiUrl + "/post", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify(post)
+                }).then(data => data.json())
+    }
+    
+    if (props.loggedin) {
+        return <div>
+                <h1>Thread page</h1>
+                <PostContainer posts={posts}/>
+                <PostReply onPostReply={handlePostReply}/>
+               </div>;
+    } else {
+        return <div>
+                <h1>Thread page</h1>
+                <PostContainer posts={posts}/>
+               </div>;
+    }
 }
 
 export default Thread;
