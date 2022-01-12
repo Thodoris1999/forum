@@ -144,6 +144,78 @@ function setupRoutes(app, dbconn) {
             console.error(err);
         }
     });
+
+    app.post("/post", async (req, res) => {
+        const q = queries['insert_post'];
+        console.log(req.body)
+        try {
+            dbconn.query(q, [req.body.content, req.body.email, req.body.thread_id], (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    console.log(results);
+                    res.json(results);
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
+    });
+
+    app.post("/shout", async (req, res) => {
+        const q = queries['insert_shout'];
+        console.log(req.body)
+        try {
+            dbconn.query(q, [req.body.content, req.body.email], (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    console.log(results);
+                    res.json(results);
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
+    });
+
+    app.post("/pm", async (req, res) => {
+        const q = queries['insert_shout'];
+        console.log(req.body)
+        try {
+            dbconn.query(q, [req.body.content, req.body.email], (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    console.log(results);
+                    res.json(results);
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
+    });
+
+    app.post("/pm", async (req, res) => {
+        const q = queries['send_pm'];
+        console.log(req.body)
+        try {
+            dbconn.query(q, [req.body.subject, req.body.content, req.body.author_email, req.body.recepient_email], (err, results) => {
+                if (err) {
+                    console.log(err)
+                    res.json(err)
+                } else {
+                    console.log(results);
+                    res.json(results);
+                }
+            });
+        } catch(err) {
+            console.error(err);
+        }
+    });
     console.log('Routes set up');
 }
 

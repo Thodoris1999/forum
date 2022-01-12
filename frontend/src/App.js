@@ -27,7 +27,7 @@ function App() {
     setLoggedIn(true);
     setEmail(email);
     console.log("User with email " + email + " logged in");
-    //navigate("/inbox");
+    navigate("/");
   }
 
   return (
