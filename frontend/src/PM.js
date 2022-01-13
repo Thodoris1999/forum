@@ -10,6 +10,7 @@ function PM(props) {
                     <div className="username">{props.pm.username}</div>
                     <div className="rolename">{props.pm.role_name}</div>
                 </div>
+                <div className="subject">{props.pm.subject}</div>
                 <div className="date">{props.pm.date}</div>
             </div>
             <div className="content">{props.pm.content}</div>

@@ -18,11 +18,11 @@ import {
 import NavigationBar from './NavigationBar';
 import Shoutbox from './ShoutBox';
 
-function Layout() {
+function Layout(props) {
   return (
     <div className="approot">
       <NavigationBar />
-      <Shoutbox/>
+      <Shoutbox loggedin={props.loggedin} user_email={props.user_email}/>
       <main>
         <Outlet/>
       </main>
@@ -42,12 +42,12 @@ function App() {
     setLoggedIn(true);
     setEmail(email);
     console.log("User with email " + email + " logged in");
-    navigate("/");
+    navigate(-1);
   }
 
   return (
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/" element={<Layout loggedin={loggedin} user_email={email}/>}>
           <Route index element={<Home/>}/>
           <Route path="register" element={<Register onUserRegister={handleLogin}/>} />
           <Route path="login" element={<Login onUserLogin={handleLogin}/>} />

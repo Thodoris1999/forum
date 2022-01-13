@@ -4,7 +4,7 @@ import './NavigationBar.css';
 function NavigationBar(props){
     return (
 
-<ul class="topnav">
+<ul className="topnav">
   <li className="topnavleft"><Link to="/">Home</Link></li>
   <li className="topnavleft"><Link to="/inbox">Inbox</Link></li>
   <li className="topnavleft"><Link to="/outbox">Outbox</Link></li>

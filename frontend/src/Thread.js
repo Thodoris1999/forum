@@ -9,7 +9,7 @@ function Thread(props) {
     let params = useParams();
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
+    async function loadThread() {
         let apiUrl = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8080';
         console.log(apiUrl + "/thread/" + params.threadid);
         fetch(apiUrl + "/thread/" + params.threadid, {
@@ -26,6 +26,10 @@ function Thread(props) {
             //console.log(posts);
         })
         .catch(e => console.log(e));
+    }
+
+    useEffect(() => {
+        loadThread();
     }, [params.threadid]);
 
     const handlePostReply = async (post) => {
@@ -40,12 +44,16 @@ function Thread(props) {
                 body: JSON.stringify(post)
                 }).then(data => data.json())
     }
+
+    const reloadThread = async () => {
+        loadThread();
+    }
     
     if (props.loggedin) {
         return <div>
                 <h1>Thread page</h1>
                 <PostContainer posts={posts}/>
-                <PostReply onPostReply={handlePostReply}/>
+                <PostReply onPostReply={handlePostReply} reloadThread={reloadThread}/>
                </div>;
     } else {
         return <div>

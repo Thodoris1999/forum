@@ -1,7 +1,7 @@
 .marg{
     margin:50px;
     border-radius:50px;
-    max-width: 1000px;
+    width: 1000px;
 }
 .header{
     background-color:#04547A;
@@ -13,13 +13,21 @@
     clear: both;
     display: table;
 }
-.user_role {margin-left:5px;
+.user_role {
+    margin-left:5px;
     float: left; 
     font-weight:bold; 
     color:white;
 }
-.rolename{margin-left: 15px;
+.rolename{
+    margin-left: 15px;
     font-weight:normal;
+}
+.subject{
+    float: left;
+    text-align: center;
+    color:white;
+    margin-left: 50px;
 }
 .date{
     text-align: right;

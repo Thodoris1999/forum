@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function PostReply(props) {
+function PostShout(props) {
     let apiUrl = process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8080';
-    const [postContent, setPostContent] = useState("");
+    const [shoutContent, setShoutContent] = useState("");
     let navigate = useNavigate();
 
     const handleSubmit = async (event) => {
@@ -12,14 +12,14 @@ function PostReply(props) {
         // check for form validity
         // normally we create tokens and stuff.
         try {
-            const result = await props.onPostReply({
-                "content": postContent
+            const result = await props.onPostShout({
+                "content": shoutContent
             });
             console.log(result);
             if ("affectedRows" in result && result.affectedRows === 1) {
-                console.log("Post posted successfully");
-                props.reloadThread();
-                setPostContent("");
+                console.log("Shout posted successfully");
+                props.reloadShoutbox();
+                setShoutContent("");
             } else {
                 console.log("Unknown error");
             }
@@ -29,13 +29,13 @@ function PostReply(props) {
     }
 
     return <div>
-            <h3>Post Reply</h3>
+            <h3>Shout!</h3>
             <form onSubmit={handleSubmit}>
-                <textarea name="post_content" required value={postContent} onChange={(event) => setPostContent(event.target.value)}/>
+                <textarea name="shout_content" required value={shoutContent} onChange={(event) => setShoutContent(event.target.value)}/>
 
-                <button type="submit" className="postbtn">Post</button>
+                <button type="submit" className="shoutbtn">Shout</button>
             </form>
            </div>;
 }
 
-export default PostReply;
+export default PostShout;

@@ -172,8 +172,8 @@ function setupRoutes(app, dbconn) {
                     console.log(err)
                     res.json(err)
                 } else {
-                    console.log(results);
-                    res.json(results);
+                    console.log(results[1]);
+                    res.json(results[1]);
                 }
             });
         } catch(err) {
