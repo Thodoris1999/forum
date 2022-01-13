@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import PostContainer from './PostContainer'
+import PMContainer from './PMContainer'
 
 function Inbox(props) {
     const [pms, setPMs] = useState([]);
@@ -33,7 +33,7 @@ function Inbox(props) {
 
     return <div>
             <h1>Inbox</h1>
-            <PostContainer posts={pms}/>
+            <PMContainer pms={pms}/>
            </div>;
 }
 

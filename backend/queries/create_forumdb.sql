@@ -319,11 +319,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `ForumDB`;
-INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('nvel18@gmail.com', 'nick', '$2a$12$6yzHVOp2kz2MGBNrbB.J/.p66Dq73LiQ9LCXKLtygWuNc9MPFxeE2', 'Global Moderator');
-INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('vsak42@gmail.com', 'bill', '$2a$12$.aGliZHwCcg7iat5w61AzO1F4UjMpk8XgLOC0atXExZAeznzYnDo2', 'Technology Moderator');
-INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('ttyr@yahoo.gr', 'thodoris', '$2a$12$IdV2OFbsiM4af4M0kIkAIOATY1cwm.u0GzSlsZc0GMqqRGMvWZj9i', 'admin');
-INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('eksolothreuths@yahoo.gr', 'eksolothreuths96', '$2a$12$5ftZZFfSdnCYxcZkYlKQw.sPElJyfm0YoNGC5QicUq4VRplOz.ZNi', 'user');
-INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('babisgate4@gmail.com', 'Post Malone', '$2a$12$Lp7SCeehLI8s8PaRMN2Us.CGbLTdIAuY9GOFLpGYsJzn2CEx0M9fu', 'user');
+INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('nvel18@gmail.com', 'nick', '$2a$12$XNNha3lzT5LAYLEa6SwzIugiKIjBmxjR.LhOSOMOXb.6sw3AKxAty ', 'Global Moderator');
+INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('vsak42@gmail.com', 'bill', '$2a$12$dMfBNX2kOFt7.8E7X2Fi5uuMgz2IO7f.Ijk9RHGOH3MAKDQQS2MfS ', 'Technology Moderator');
+INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('ttyr@yahoo.gr', 'thodoris', '$2a$12$hKyNLPpi576irK1TZqOx2.4W.S4pIyfCsZj7oIhZ4Zv4pJw9bY1oK', 'admin');
+INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('eksolothreuths@yahoo.gr', 'eksolothreuths96', '$2a$12$zX4qvcZTGhxwqoaM8WXaIOS.8ANlwSIn/rCaoskafYlMlLMe9u55W', 'user');
+INSERT INTO `ForumDB`.`Users` (`email`, `username`, `password`, `role_name`) VALUES ('babisgate4@gmail.com', 'Post Malone', '$2a$12$LKwCKYK8Tbfpi.VkBbPV3uCzA7J12N2I/QRW82O94bmy5YEFcjB4a ', 'user');
 
 COMMIT;
 

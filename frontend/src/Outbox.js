@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import PostContainer from './PostContainer'
+import PMContainer from './PMContainer'
 
 function Outbox(props) {
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ function Outbox(props) {
 
     return <div>
             <h1>Outbox</h1>
-            <PostContainer posts={pms}/>
+            <PMContainer pms={pms}/>
            </div>;
 }
 

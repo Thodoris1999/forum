@@ -1,4 +1,4 @@
-SELECT username,content,date,Users.role_name AS role_name,role_color
+SELECT pm_id,username,content,date,Users.role_name AS role_name,role_color
 FROM PMs
 INNER JOIN Users
 INNER JOIN Roles
