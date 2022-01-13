@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function Subcategory(props) {
     return (
-    <div>
+    <div className="subcategory">
         <Link to={ "/category/"+ props.category.category_id +""  } >{props.category.title}</Link>
     </div>
     )

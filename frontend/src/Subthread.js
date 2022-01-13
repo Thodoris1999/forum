@@ -4,7 +4,7 @@ import React from "react";
 
 function Subthread(props) {
     return (
-    <div>
+    <div className="subthread">
         <Link to={ "/thread/"+ props.thread.thread_id +""  } >{props.thread.title}</Link>
     </div>
     )

@@ -3,6 +3,7 @@ import React from "react";
 
 import Subcategory from './Subcategory'
 import Subthread from './Subthread'
+import './CategoryContainer.css'
 
 function CategoryContainer(props) {
 
@@ -13,7 +14,7 @@ function CategoryContainer(props) {
         return <Subthread key={subthread.thread_id.toString()} thread={subthread}/>
     });
 
-    return <div>
+    return <div className="category_container">
                 {subcategoryJSX}
                 {subthreadJSX}
            </div>;
