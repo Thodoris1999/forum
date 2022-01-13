@@ -1,9 +1,13 @@
 
-
-import React, { useState } from "react";
+import { Link } from "react-router-dom"
+import React from "react";
 
 function Subthread(props) {
-    return <li>{JSON.stringify(props.thread)}</li>
+    return (
+    <div>
+        <Link to={ "/thread/"+ props.thread.thread_id +""  } >{props.thread.title}</Link>
+    </div>
+    )
 }
 
 export default Subthread;

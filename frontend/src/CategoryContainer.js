@@ -13,10 +13,10 @@ function CategoryContainer(props) {
         return <Subthread key={subthread.thread_id.toString()} thread={subthread}/>
     });
 
-    return <ul>
+    return <div>
                 {subcategoryJSX}
                 {subthreadJSX}
-           </ul>;
+           </div>;
 }
 
 export default CategoryContainer;

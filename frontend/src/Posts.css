@@ -1,8 +1,7 @@
-h1{text-align:center}
-
 .marg{
     margin:50px;
     border-radius:50px;
+    max-width: 1000px;
 }
 .header{
     background-color:#04547A;

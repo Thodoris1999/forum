@@ -16,11 +16,13 @@ import {
   useNavigate
 } from "react-router-dom";
 import NavigationBar from './NavigationBar';
+import Shoutbox from './ShoutBox';
 
 function Layout() {
   return (
-    <div>
+    <div className="approot">
       <NavigationBar />
+      <Shoutbox/>
       <main>
         <Outlet/>
       </main>

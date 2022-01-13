@@ -31,7 +31,7 @@ function Category() {
 
 
     return <div>
-            <h1>Hello world</h1>
+            <h1>Category</h1>
             <CategoryContainer subcategories={subcategories} subthreads={subthreads}/>
             </div>;
 }

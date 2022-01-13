@@ -1,6 +1,5 @@
 
 import React from "react";
-import Shoutbox from "./ShoutBox";
 import CategoryContainer from './CategoryContainer'
 
 class Home extends React.Component {
@@ -31,7 +30,6 @@ class Home extends React.Component {
         return <div>
                 <h1>Home</h1>
                 <CategoryContainer subcategories={this.state.categories} subthreads={[]}/>
-                <Shoutbox/>
                </div>;
     }
 }

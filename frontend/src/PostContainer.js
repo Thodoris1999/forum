@@ -8,7 +8,7 @@ function PostContainer(props) {
         return <Post key={post.post_id.toString()} post={post}/>
     });
     return (
-        <ul>{posts}</ul>
+        <div>{posts}</div>
     )
 }
 

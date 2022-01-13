@@ -28,6 +28,29 @@
   color: #61dafb;
 }
 
+div.approot {
+  white-space: nowrap;
+}
+
+.shoutbox {
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.shoutbox h1 {
+  text-align: center;
+}
+
+main {
+  white-space: normal;
+  display: inline-block;
+  vertical-align: top;
+  border-left: 1px solid gray;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

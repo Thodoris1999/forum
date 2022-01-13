@@ -24,7 +24,7 @@ function Shoutbox() {
         .catch(e => console.log(e));
     }, []);
 
-    return <div>
+    return <div className="shoutbox">
             <h1>Shoutbox</h1>
             <ShoutContainer shouts={shouts}/>
            </div>;

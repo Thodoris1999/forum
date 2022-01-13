@@ -8,7 +8,7 @@ function ShoutContainer(props) {
         return <Shout key={shout.shout_id.toString()} shout={shout}/>
     });
     return (
-        <ul>{posts}</ul>
+        <div>{posts}</div>
     )
 }
 
