@@ -1,4 +1,4 @@
-SELECT Posts.post_id AS post_id, Posts.date AS date, Posts.content AS content, Users.username AS username, Roles.role_name AS role_name, Roles.role_color
+SELECT Posts.post_id AS post_id, Posts.date AS date, Posts.content AS content, Users.username AS username, Roles.role_name AS role_name, Roles.role_color AS role_color
 FROM Posts
 INNER JOIN Users
 INNER JOIN Roles
