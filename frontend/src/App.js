@@ -12,8 +12,21 @@ import React, { useState } from "react";
 import {
   Routes,
   Route,
+  Outlet,
   useNavigate
 } from "react-router-dom";
+import NavigationBar from './NavigationBar';
+
+function Layout() {
+  return (
+    <div>
+      <NavigationBar />
+      <main>
+        <Outlet/>
+      </main>
+    </div>
+  );
+}
 
 function App() {
   // credentials on frontend because
@@ -32,13 +45,15 @@ function App() {
 
   return (
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/register" element={<Register onUserRegister={handleLogin}/>} />
-        <Route path="/login" element={<Login onUserLogin={handleLogin}/>} />
-        <Route path="/inbox" element={<Inbox loggedin={loggedin} user_email={email}/>} />
-        <Route path="/outbox" element={<Outbox loggedin={loggedin} user_email={email}/>} />
-        <Route path="/category/:categoryid" element={<Category/>} />
-        <Route path="/thread/:threadid" element={<Thread loggedin={loggedin} user_email={email}/>} />
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path="register" element={<Register onUserRegister={handleLogin}/>} />
+          <Route path="login" element={<Login onUserLogin={handleLogin}/>} />
+          <Route path="inbox" element={<Inbox loggedin={loggedin} user_email={email}/>} />
+          <Route path="outbox" element={<Outbox loggedin={loggedin} user_email={email}/>} />
+          <Route path="category/:categoryid" element={<Category/>} />
+          <Route path="thread/:threadid" element={<Thread loggedin={loggedin} user_email={email}/>} />
+        </Route>
       </Routes>
   );
 }

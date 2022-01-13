@@ -1,13 +1,9 @@
 
-
 import React, { useState } from "react";
 import './Posts.css';
 
-
-
 function Post(props) {
     return (
-
         <div className="marg">
             <div className="header">
                 <div className="user_role">
@@ -19,8 +15,6 @@ function Post(props) {
             
             <div className="content">{props.post.content}</div>
         </div>
-
-
     )
 }
 
