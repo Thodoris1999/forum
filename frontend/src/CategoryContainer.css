@@ -5,6 +5,7 @@
   padding: 10px;
   border: 1px solid #04547A;
   border-bottom: none;
+  border-radius: 2px;
 }
 
 .subcategory:last-child {

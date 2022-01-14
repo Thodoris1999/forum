@@ -22,7 +22,9 @@ function Layout(props) {
   return (
     <div className="approot">
       <NavigationBar />
-      <Shoutbox loggedin={props.loggedin} user_email={props.user_email}/>
+      <div className="shoutbox_frame">
+        <Shoutbox loggedin={props.loggedin} user_email={props.user_email}/>
+      </div>
       <main>
         <Outlet/>
       </main>

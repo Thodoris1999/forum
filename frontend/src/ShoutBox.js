@@ -47,13 +47,13 @@ function Shoutbox(props) {
 
     if (props.loggedin) {
         return <div className="shoutbox">
-                <h1>Shoutbox</h1>
+                <h4>Shoutbox</h4>
                 <ShoutContainer shouts={shouts}/>
                 <PostShout onPostShout={handleShoutPost} reloadShoutbox={reloadShoutbox}/>
             </div>;
     } else {
         return <div className="shoutbox">
-                <h1>Shoutbox</h1>
+                <h4>Shoutbox</h4>
                 <ShoutContainer shouts={shouts}/>
             </div>;
     }

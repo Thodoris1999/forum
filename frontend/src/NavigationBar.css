@@ -6,6 +6,7 @@ ul.topnav {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  background-color: #04547A;
 }
 
 ul.topnav li.topnavleft {float: left;}
@@ -17,6 +18,7 @@ ul.topnav li.topnavleft a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  background-color: #04547A;
 }
 ul.topnav li.topnavright a {
   display: block;
@@ -24,6 +26,7 @@ ul.topnav li.topnavright a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  background-color: #04547A;
 }
 
 ul.topnav li.topnavleft a:hover:not(.active) {background-color: #111;}

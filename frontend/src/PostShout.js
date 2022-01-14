@@ -29,7 +29,7 @@ function PostShout(props) {
     }
 
     return <div>
-            <h3>Shout!</h3>
+            <h5>Shout!</h5>
             <form onSubmit={handleSubmit}>
                 <textarea name="shout_content" required value={shoutContent} onChange={(event) => setShoutContent(event.target.value)}/>
 

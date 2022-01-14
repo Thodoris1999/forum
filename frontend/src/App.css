@@ -30,16 +30,38 @@
 
 form * {
   display: block;
+  margin-left: 18px;
+}
+
+h3 {
+  margin-left: 50px;
 }
 
 div.approot {
   white-space: nowrap;
+  background-color: whitesmoke;
+}
+
+.shoutbox_frame{
+  display: inline-block;
+  width:254px;
+  background-color: white;
+  padding-bottom: 25px;
+  margin-top:25px;
+  margin-left:25px;
+  margin-bottom:200px;
 }
 
 .shoutbox {
   display: inline-block;
   margin-left: 30px;
   margin-right: 10px;
+  margin-top: 25px;
+  background-color: #04547A;
+}
+
+.shoutbtn {
+  margin-left: 75px;
 }
 
 .shoutbox h1 {
@@ -50,9 +72,13 @@ main {
   white-space: normal;
   display: inline-block;
   vertical-align: top;
-  border-left: 1px solid gray;
-  margin-left: 20px;
   padding-left: 20px;
+  padding-bottom: 30px;
+  background-color: white;
+  margin-top: 25px;
+  margin-left: 14px;
+  margin-bottom: 40px;
+  width: 1150px;
 }
 
 @keyframes App-logo-spin {
